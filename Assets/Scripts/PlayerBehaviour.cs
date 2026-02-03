@@ -5,6 +5,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     public float speed;
     public GameObject treat;
+    private GameObject currentTreat;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,17 +27,19 @@ public class PlayerBehaviour : MonoBehaviour
         newPosition.x = transform.position.x + update;
         transform.position = newPosition;
 
-        if (treat != null) {
-            Vector3 offset = new Vector3(0, -1.0f, 0);
-            treat.transform.position = transform.position + offset;
-            treat.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-            treat.GetComponent<Collider2D>().enabled = false;
+        if (currentTreat != null) {
+            Vector3 treatOffset = new Vector3(0f, -1f, 0f);
+            currentTreat.transform.position = transform.position + treatOffset;
+            //currentTreat.GetComponent<PolygonCollider2D>().enabled = false;
+            currentTreat.GetComponent<Rigidbody2D>().gravityScale = 0f;
+        } else {
+            currentTreat = Instantiate(treat, transform.position, Quaternion.identity);
         }
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame) {
-            treat.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
-            treat.GetComponent<Collider2D>().enabled = true;
-            treat = null;
+            currentTreat.GetComponent<Rigidbody2D>().gravityScale = 1f;
+            currentTreat.GetComponent<PolygonCollider2D>().enabled = true;
+            currentTreat = null;
         }
     }
 }
