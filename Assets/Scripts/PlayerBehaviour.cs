@@ -7,6 +7,8 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject treat;
     private GameObject currentTreat;
     public GameObject[] treats;
+    public float minimumXpos;
+    public float maximumXpos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +34,11 @@ public class PlayerBehaviour : MonoBehaviour
         }
         Vector3 newPosition = transform.position;
         newPosition.x = transform.position.x + update;
-        transform.position = newPosition;
+        if (newPosition.x < maximumXpos && newPosition.x > minimumXpos) // only transform to new if new pos is within bounds
+        {
+            transform.position = newPosition;
+        }
+        
 
         if (currentTreat != null) {
             Vector3 treatOffset = new Vector3(0f, -1f, 0f);

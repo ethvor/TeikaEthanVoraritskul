@@ -711,6 +711,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviour
   speed: 0.5
   treat: {fileID: 2329791206037637856, guid: 30f2ca1909a9149e7b7825fae7e5a02c, type: 3}
+  treats:
+  - {fileID: 3968751320396117027, guid: 33109ff30d8a24e0a963a1f9fefe1d91, type: 3}
+  - {fileID: 7358607205366785479, guid: fc18b9eb7b71b40a98b82e340e06b27e, type: 3}
+  - {fileID: 3110869185684787251, guid: 71e29bfec51214476947bc299431046d, type: 3}
+  - {fileID: 6520371665762818510, guid: 55138f1838901435aaa1ae3794883534, type: 3}
+  - {fileID: 4762534773347188871, guid: c642909258ccd432fa32c169226bd98e, type: 3}
+  - {fileID: 7651682646457648757, guid: 256f31b2abcfd4d50a10768c0a82c918, type: 3}
+  - {fileID: 2329791206037637856, guid: 30f2ca1909a9149e7b7825fae7e5a02c, type: 3}
+  - {fileID: 6526686385331748228, guid: f33040dfcec3341e5902ac435981ffbc, type: 3}
+  minimumXpos: -1.85
+  maximumXpos: 1.85
 --- !u!212 &1659895958
 SpriteRenderer:
   serializedVersion: 2
@@ -779,7 +790,7 @@ Transform:
   m_GameObject: {fileID: 1659895956}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
