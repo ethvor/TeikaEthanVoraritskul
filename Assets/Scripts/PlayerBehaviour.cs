@@ -10,11 +10,15 @@ public class PlayerBehaviour : MonoBehaviour
     public float minimumXpos;
     public float maximumXpos;
 
+    private float startTime = 0.0f;
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
-        
+        startTime = 0.0f;
+
+
 
     }
 
@@ -22,7 +26,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
 
-       
+     
         
         
         float update = 0.0f;
@@ -34,10 +38,16 @@ public class PlayerBehaviour : MonoBehaviour
         }
         Vector3 newPosition = transform.position;
         newPosition.x = transform.position.x + update;
+        
+        
+        float hitTime = Time.time;
+        
+        
         if (newPosition.x < maximumXpos && newPosition.x > minimumXpos) // only transform to new if new pos is within bounds
         {
             transform.position = newPosition;
         }
+       
         
 
         if (currentTreat != null) {
