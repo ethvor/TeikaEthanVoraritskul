@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerBehaviour : MonoBehaviour
 {
     public float speed;
@@ -11,6 +12,10 @@ public class PlayerBehaviour : MonoBehaviour
     public float maximumXpos;
 
     private float startTime = 0.0f;
+
+    public int move; // used for the collider constraint in class 2/10
+    
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,6 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
         startTime = 0.0f;
 
 
+        move = 0; //0 means you can move both ways
 
     }
 
@@ -67,4 +73,23 @@ public class PlayerBehaviour : MonoBehaviour
             currentTreat = null;
         }
     }
+
+    
+    /*
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        print("you touched" + other.gameObject.name);
+        if (other.gameObject.CompareTag("LB"))
+        {
+            move = 1; //cannot move left
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        
+    }
+    */
 }
+
+

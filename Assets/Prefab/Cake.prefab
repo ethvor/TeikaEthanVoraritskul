@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 478692129468630329}
   - component: {fileID: -3254790685109799772}
   - component: {fileID: -1227123403966628772}
+  - component: {fileID: 8424625994829899458}
   m_Layer: 0
   m_Name: Cake
   m_TagString: Untagged
@@ -194,3 +195,17 @@ PolygonCollider2D:
       - {x: 1.2698666, y: -1.3417754}
       - {x: 1.3464501, y: -1.2153836}
   m_UseDelaunayMesh: 1
+--- !u!114 &8424625994829899458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526686385331748228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7a4d541e0c44dcbbf1f1e5ebaffba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreatBehavior
+  timeout: 0
+  timeStart: 0
