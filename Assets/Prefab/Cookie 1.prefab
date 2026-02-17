@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cookie 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8424625994829899458, guid: f33040dfcec3341e5902ac435981ffbc, type: 3}
+      propertyPath: treatType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

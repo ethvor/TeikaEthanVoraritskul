@@ -207,3 +207,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7a4d541e0c44dcbbf1f1e5ebaffba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreatBehavior
+  treats: []
+  treatType: 7

@@ -328,6 +328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Donut
       objectReference: {fileID: 0}
+    - target: {fileID: 8424625994829899458, guid: f33040dfcec3341e5902ac435981ffbc, type: 3}
+      propertyPath: treatType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -1227123403966628772, guid: f33040dfcec3341e5902ac435981ffbc, type: 3}
     m_RemovedGameObjects: []
