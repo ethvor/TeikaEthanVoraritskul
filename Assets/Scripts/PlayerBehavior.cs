@@ -63,7 +63,7 @@ public class PlayerBehaviour : MonoBehaviour
             currentTreat.GetComponent<Rigidbody2D>().gravityScale = 0f;
         } else
         {
-            int choice = Random.Range(0, treats.Length);
+            int choice = GameObject.FindGameObjectWithTag("Queue").GetComponent<QueueManager>().updateQueue();
             currentTreat = Instantiate(treats[choice], transform.position, Quaternion.identity);
         }
 
