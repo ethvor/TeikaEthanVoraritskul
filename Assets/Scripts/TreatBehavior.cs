@@ -6,6 +6,7 @@ public class TreatBehavior : MonoBehaviour
     public GameObject[] treats;
     public int treatType;
     private bool isMerging = false; //make so only one can merge
+    private AudioSource mergeSource;
     
     
     
@@ -13,6 +14,10 @@ public class TreatBehavior : MonoBehaviour
     void Start()
     {
         treats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>().treats;
+        mergeSource = GameObject.FindGameObjectWithTag("Player").GetComponents<AudioSource>()[0];
+
+
+
     }
     
     
@@ -48,7 +53,9 @@ public class TreatBehavior : MonoBehaviour
                 GameObject newTreat = Instantiate(treats[choice], testSpawnPos, Quaternion.identity);
                 newTreat.GetComponent<Collider2D>().enabled = true;
                 newTreat.GetComponent<Rigidbody2D>().gravityScale = 1;
-                
+
+
+                mergeSource.Play();
                 
                 //destroy other
                 Destroy(other.gameObject);
