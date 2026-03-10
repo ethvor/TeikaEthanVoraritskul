@@ -4,6 +4,7 @@ public class QueueManager : MonoBehaviour
 {
 
 
+    public int maxTreatID;
     public Sprite[] UISprites;
     public int[] queue;
     private SpriteRenderer[] childRenderers;
@@ -15,7 +16,7 @@ public class QueueManager : MonoBehaviour
         queue = new int[7];
         for (int i = 0; i < 7; i++)
         {
-            queue[i] = Random.Range(0, UISprites.Length); // make weighted
+            queue[i] = Random.Range(0, maxTreatID); // make weighted
 
 
 
@@ -52,7 +53,7 @@ public class QueueManager : MonoBehaviour
         {
             queue[i-1] = queue[i];
         }
-        queue[6] = Random.Range(0, UISprites.Length);
+        queue[6] = Random.Range(0, maxTreatID);
 
 return currentType;
     }

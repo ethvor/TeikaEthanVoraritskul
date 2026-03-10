@@ -587,6 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebef96af9f058435c975c89d4f9e05c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QueueManager
+  maxTreatID: 5
   UISprites:
   - {fileID: 6882009670399570305, guid: 8d50d2e44afed48f484620ebeca5fe3a, type: 3}
   - {fileID: 1522542682994203635, guid: 8d50d2e44afed48f484620ebeca5fe3a, type: 3}

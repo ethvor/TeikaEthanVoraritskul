@@ -14,13 +14,15 @@ public class PlayerBehaviour : MonoBehaviour
     private float startTime = 0.0f;
 
     public int move; // used for the collider constraint in class 2/10
-    
+
+    private QueueManager queue;
     
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        queue = GameObject.FindGameObjectWithTag("Queue").GetComponent<QueueManager>();
         startTime = 0.0f;
 
 
@@ -63,7 +65,8 @@ public class PlayerBehaviour : MonoBehaviour
             currentTreat.GetComponent<Rigidbody2D>().gravityScale = 0f;
         } else
         {
-            int choice = GameObject.FindGameObjectWithTag("Queue").GetComponent<QueueManager>().updateQueue();
+            int choice = queue.updateQueue();
+            
             currentTreat = Instantiate(treats[choice], transform.position, Quaternion.identity);
         }
 
