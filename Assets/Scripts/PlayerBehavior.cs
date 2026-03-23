@@ -17,6 +17,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     private QueueManager queue;
     private AudioSource dropSource;
+    public float dropCooldown = 0.75f;
+    private float lastDropTime = 0f;
     
     
     
@@ -72,11 +74,12 @@ public class PlayerBehaviour : MonoBehaviour
             currentTreat = Instantiate(treats[choice], transform.position, Quaternion.identity);
         }
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && Time.time - lastDropTime > dropCooldown) {
             currentTreat.GetComponent<Rigidbody2D>().gravityScale = 1f;
             currentTreat.GetComponent<Collider2D>().enabled = true;
             dropSource.Play();
             currentTreat = null;
+            lastDropTime = Time.time;
         }
     }
 
