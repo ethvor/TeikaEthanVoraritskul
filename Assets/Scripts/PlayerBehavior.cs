@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 
 public class PlayerBehaviour : MonoBehaviour
@@ -19,6 +20,9 @@ public class PlayerBehaviour : MonoBehaviour
     private AudioSource dropSource;
     public float dropCooldown = 0.75f;
     private float lastDropTime = 0f;
+    public int[] points;
+    public int score;
+    public TMP_Text scoreText;
     
     
     
@@ -31,7 +35,14 @@ public class PlayerBehaviour : MonoBehaviour
 
 
         move = 0; //0 means you can move both ways
+        score = 0;
 
+    }
+
+    public void UpdateScore(int treatType)
+    {
+        score = score + points[treatType];
+        scoreText.text = "" + score;
     }
 
     // Update is called once per frame

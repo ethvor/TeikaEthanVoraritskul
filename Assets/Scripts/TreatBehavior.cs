@@ -56,7 +56,8 @@ public class TreatBehavior : MonoBehaviour
 
 
                 mergeSource.Play();
-                
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>().UpdateScore(treatType);
+
                 //destroy other
                 Destroy(other.gameObject);
                 //destroy self
