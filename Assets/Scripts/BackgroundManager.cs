@@ -37,8 +37,8 @@ public class BackgroundManager : MonoBehaviour
         
         for (int i = 0; i < 3; i++)
         {
-            float xPos = backgrounds[i].transform.position.x + speed;
-            float yPos = backgrounds[i].transform.position.y + speed;
+            float xPos = backgrounds[i].transform.position.x + speed * Time.deltaTime;
+            float yPos = backgrounds[i].transform.position.y + speed * Time.deltaTime;
             Vector2 position = new Vector2(xPos, yPos);
           
             if (backgrounds[i].transform.position.x > -pivotPoint / 2)
