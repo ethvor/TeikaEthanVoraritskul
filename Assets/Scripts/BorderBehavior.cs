@@ -12,7 +12,7 @@ public class BorderBehavior : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeout = 1.5f;
+        timeout = 1f;
 
     }
 
@@ -53,6 +53,7 @@ public class BorderBehavior : MonoBehaviour
             {
                 //do something
                 gameOver.SetActive(true);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>().SetGameOver();
             }
 
         }

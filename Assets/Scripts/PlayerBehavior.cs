@@ -23,6 +23,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int[] points;
     public int score;
     public TMP_Text scoreText;
+    private bool gameOverState = false;
     
     
     
@@ -45,9 +46,16 @@ public class PlayerBehaviour : MonoBehaviour
         scoreText.text = "" + score;
     }
 
+    public void SetGameOver()
+    {
+        gameOverState = true;
+        GetComponents<AudioSource>()[1].Stop();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (gameOverState) return;
 
      
         
