@@ -16,6 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int move; // used for the collider constraint in class 2/10
 
     private QueueManager queue;
+    private AudioSource dropSource;
     
     
     
@@ -23,6 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         queue = GameObject.FindGameObjectWithTag("Queue").GetComponent<QueueManager>();
+        dropSource = GetComponents<AudioSource>()[2];
         startTime = 0.0f;
 
 
@@ -73,6 +75,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame) {
             currentTreat.GetComponent<Rigidbody2D>().gravityScale = 1f;
             currentTreat.GetComponent<Collider2D>().enabled = true;
+            dropSource.Play();
             currentTreat = null;
         }
     }
